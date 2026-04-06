@@ -1,9 +1,9 @@
-/* ── Layout ── */
+﻿/* 鈹€鈹€ Layout 鈹€鈹€ */
 .ant-layout {
   background: #f8fafc;
 }
 
-/* ── CRM Card（参考设计风格：无边框、大圆角、柔和阴影） ── */
+/* 鈹€鈹€ CRM Card锛堝弬鑰冭璁￠鏍硷細鏃犺竟妗嗐€佸ぇ鍦嗚銆佹煍鍜岄槾褰憋級 鈹€鈹€ */
 .crm-card.ant-card {
   border: none !important;
   border-radius: 16px !important;
@@ -14,14 +14,14 @@
   padding: 24px !important;
 }
 
-/* ── Card 统一阴影（弥散阴影，现代 SaaS 质感） ── */
+/* 鈹€鈹€ Card 缁熶竴闃村奖锛堝讥鏁ｉ槾褰憋紝鐜颁唬 SaaS 璐ㄦ劅锛?鈹€鈹€ */
 .ant-card {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02) !important;
   border: 1px solid #f3f4f6 !important;
   border-radius: 16px !important;
 }
 
-/* ── Soft Tag（药丸标签） ── */
+/* 鈹€鈹€ Soft Tag锛堣嵂涓告爣绛撅級 鈹€鈹€ */
 .soft-tag.ant-tag {
   border: none !important;
   border-radius: 999px !important;
@@ -36,7 +36,7 @@
 .soft-tag.red   { background: #fee2e2 !important; color: #b91c1c !important; }
 .soft-tag.cyan  { background: #cffafe !important; color: #0e7490 !important; }
 
-/* ── Fund Table（轻量表格） ── */
+/* 鈹€鈹€ Fund Table锛堣交閲忚〃鏍硷級 鈹€鈹€ */
 .fund-table .ant-table,
 .fund-table .ant-table-container {
   border: none !important;
@@ -59,12 +59,12 @@
   display: none !important;
 }
 
-/* ── Alert Card（蓝底预警卡片） ── */
+/* 鈹€鈹€ Alert Card锛堣摑搴曢璀﹀崱鐗囷級 鈹€鈹€ */
 .alert-card.ant-card {
   background: #eff6ff !important;
 }
 
-/* ── Dashboard Header ── */
+/* 鈹€鈹€ Dashboard Header 鈹€鈹€ */
 .dashboard-header {
   display: flex;
   flex-direction: column;
@@ -79,7 +79,7 @@
   }
 }
 
-/* ── Sidebar Menu（参考设计样式） ── */
+/* 鈹€鈹€ Sidebar Menu锛堝弬鑰冭璁℃牱寮忥級 鈹€鈹€ */
 .sidebar-menu.ant-menu {
   background: transparent !important;
   border-inline-end: none !important;
@@ -98,13 +98,26 @@
   color: #2563eb !important;
 }
 
-/* ── Statistic 数字字体加强 ── */
+.ant-layout-sider-trigger {
+  background: #ffffff !important;
+  color: #64748b !important;
+  border-top: 1px solid #e2e8f0;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.ant-layout-sider-trigger:hover {
+  background: #f8fafc !important;
+  color: #2563eb !important;
+}
+
+/* 鈹€鈹€ Statistic 鏁板瓧瀛椾綋鍔犲己 鈹€鈹€ */
 .ant-statistic-content-value {
   font-family: 'DIN Alternate', 'Roboto', -apple-system, sans-serif !important;
   font-weight: 600 !important;
 }
 
-/* ── Table 现代化（全局统一为轻量风格） ── */
+/* 鈹€鈹€ Table 鐜颁唬鍖栵紙鍏ㄥ眬缁熶竴涓鸿交閲忛鏍硷級 鈹€鈹€ */
 .ant-table-wrapper,
 .ant-table,
 .ant-table-container,
@@ -141,7 +154,7 @@
   background: #f8fafc !important;
 }
 
-/* overdue row（超期未跟进客户行高亮） */
+/* overdue row锛堣秴鏈熸湭璺熻繘瀹㈡埛琛岄珮浜級 */
 .ant-table-tbody .row-overdue > td {
   background: #fff8f0 !important;
 }
@@ -149,7 +162,7 @@
   background: #ffefd6 !important;
 }
 
-/* ── Tag 现代化（无边框 · 内圆角 · 宽松内边距） ── */
+/* 鈹€鈹€ Tag 鐜颁唬鍖栵紙鏃犺竟妗?路 鍐呭渾瑙?路 瀹芥澗鍐呰竟璺濓級 鈹€鈹€ */
 .ant-tag {
   border: none !important;
   border-radius: 6px !important;
@@ -158,32 +171,30 @@
   line-height: 20px !important;
 }
 
-/* ── Form label ── */
+/* 鈹€鈹€ Form label 鈹€鈹€ */
 .ant-form-item-label > label {
   font-size: 13px !important;
   font-weight: 500 !important;
   color: #4b5563 !important;
 }
 
-/* ── Drawer header ── */
+/* 鈹€鈹€ Drawer header 鈹€鈹€ */
 .ant-drawer-header {
   border-bottom: 1px solid #f0f0f0 !important;
 }
 
-/* ── Modal header ── */
+/* 鈹€鈹€ Modal header 鈹€鈹€ */
 .ant-modal-header {
   border-bottom: 1px solid #f0f0f0 !important;
   padding-bottom: 12px !important;
   margin-bottom: 20px !important;
 }
 
-/* ── 表单输入 Filled 风格 ── */
+/* 鈹€鈹€ 琛ㄥ崟杈撳叆 Filled 椋庢牸 鈹€鈹€ */
 /*
-  策略：CSS 完全接管灰/白两个状态，不依赖 ConfigProvider token。
-  这样两个状态都由同一来源控制，彻底避免 CSS-in-JS 与静态 CSS 的优先级冲突。
-*/
+  绛栫暐锛欳SS 瀹屽叏鎺ョ鐏?鐧戒袱涓姸鎬侊紝涓嶄緷璧?ConfigProvider token銆?  杩欐牱涓や釜鐘舵€侀兘鐢卞悓涓€鏉ユ簮鎺у埗锛屽交搴曢伩鍏?CSS-in-JS 涓庨潤鎬?CSS 鐨勪紭鍏堢骇鍐茬獊銆?*/
 
-/* 1. 默认：显式灰底 + 无边框 + 无阴影 */
+/* 1. 榛樿锛氭樉寮忕伆搴?+ 鏃犺竟妗?+ 鏃犻槾褰?*/
 .ant-input,
 .ant-input-affix-wrapper,
 .ant-select-selector,
@@ -193,12 +204,12 @@
   border-color: transparent !important;
   box-shadow: none !important;
 }
-/* 带前缀/后缀时内层 input 透明，颜色完全由外层容器决定 */
+/* 甯﹀墠缂€/鍚庣紑鏃跺唴灞?input 閫忔槑锛岄鑹插畬鍏ㄧ敱澶栧眰瀹瑰櫒鍐冲畾 */
 .ant-input-affix-wrapper > input.ant-input {
   background-color: transparent !important;
 }
 
-/* 2. 聚焦：容器变白 + 蓝色边框 + 光晕 */
+/* 2. 鑱氱劍锛氬鍣ㄥ彉鐧?+ 钃濊壊杈规 + 鍏夋檿 */
 .ant-input:focus,
 .ant-input-focused,
 .ant-input-affix-wrapper:focus-within,
@@ -211,13 +222,13 @@
   border-color: #2563eb !important;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12) !important;
 }
-/* 聚焦时内层 input 同步变白（防止透明穿透失效） */
+/* 鑱氱劍鏃跺唴灞?input 鍚屾鍙樼櫧锛堥槻姝㈤€忔槑绌块€忓け鏁堬級 */
 .ant-input-affix-wrapper:focus-within > input.ant-input,
 .ant-input-affix-wrapper-focused > input.ant-input {
   background-color: #ffffff !important;
 }
 
-/* 3. Hover：轻柔边框提示，背景保持灰 */
+/* 3. Hover锛氳交鏌旇竟妗嗘彁绀猴紝鑳屾櫙淇濇寔鐏?*/
 .ant-input:hover,
 .ant-input-affix-wrapper:hover,
 .ant-select:not(.ant-select-disabled):not(.ant-select-customize-input) .ant-select-selector:hover,
@@ -226,7 +237,7 @@
   border-color: #cbd5e1 !important;
 }
 
-/* 智能助手底部输入框保持白底，作为主操作区特例 */
+/* 鏅鸿兘鍔╂墜搴曢儴杈撳叆妗嗕繚鎸佺櫧搴曪紝浣滀负涓绘搷浣滃尯鐗逛緥 */
 .agent-command-bar {
   background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
   border: 1px solid #dbe3ef;
@@ -339,7 +350,7 @@
   border-color: #c7dbff;
 }
 
-/* ── 侧边 Menu 选中指示条隐藏 + 选中项加粗 ── */
+/* 鈹€鈹€ 渚ц竟 Menu 閫変腑鎸囩ず鏉￠殣钘?+ 閫変腑椤瑰姞绮?鈹€鈹€ */
 .ant-menu-inline .ant-menu-item::after,
 .ant-menu-vertical .ant-menu-item::after {
   display: none !important;
@@ -348,14 +359,14 @@
   font-weight: 600 !important;
 }
 
-/* ── Empty 空状态精简化 ── */
+/* 鈹€鈹€ Empty 绌虹姸鎬佺簿绠€鍖?鈹€鈹€ */
 .ant-empty-description {
   font-size: 13px !important;
   color: #9ca3af !important;
 }
 
-/* ── Recharts 图表点击黑框去除 ── */
-/* @import 已移到 index.css 顶部，确保本文件被加载 */
+/* 鈹€鈹€ Recharts 鍥捐〃鐐瑰嚮榛戞鍘婚櫎 鈹€鈹€ */
+/* @import 宸茬Щ鍒?index.css 椤堕儴锛岀‘淇濇湰鏂囦欢琚姞杞?*/
 .recharts-wrapper,
 .recharts-wrapper *,
 .recharts-surface {
@@ -367,7 +378,7 @@ svg *:focus,
 svg *:focus-visible {
   outline: none !important;
 }
-/* Recharts Sector / Bar 等可聚焦元素 */
+/* Recharts Sector / Bar 绛夊彲鑱氱劍鍏冪礌 */
 .recharts-sector:focus,
 .recharts-sector:focus-visible,
 .recharts-rectangle:focus,
@@ -375,7 +386,7 @@ svg *:focus-visible {
   outline: none !important;
 }
 
-/* ── 页面淡入 ── */
+/* 鈹€鈹€ 椤甸潰娣″叆 鈹€鈹€ */
 .page-content-enter {
   animation: pageFadeIn 0.2s ease;
 }

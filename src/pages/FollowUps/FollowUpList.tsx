@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import {
   Typography,
   Button,
@@ -34,7 +34,7 @@ import type { Product } from '../../types/fund'
 import { DatePicker } from 'antd'
 import dayjs from 'dayjs'
 
-const { Title, Text } = Typography
+const { Title, Text, Paragraph } = Typography
 const { TextArea } = Input
 
 const METHOD_TAG_CLS: Record<FollowUpMethod, string> = {
@@ -227,7 +227,7 @@ export default function FollowUpList() {
     {
       title: '客户',
       key: 'customer',
-      width: 110,
+      width: 96,
       render: (_, row) => {
         const c = clientMap[row.customerId]
         return c ? (
@@ -248,13 +248,13 @@ export default function FollowUpList() {
       title: '方式',
       dataIndex: 'method',
       key: 'method',
-      width: 90,
+      width: 84,
       render: (v: FollowUpMethod) => <Tag className={`soft-tag ${METHOD_TAG_CLS[v]}`}>{v}</Tag>,
     },
     {
       title: '意向状态',
       key: 'intent',
-      width: 130,
+      width: 116,
       render: (_, row) => (
         <Space size={4}>
           <Tag className={`soft-tag ${INTENT_TAG_CLS[row.intent]}`}>{row.intent}</Tag>
@@ -272,18 +272,21 @@ export default function FollowUpList() {
       title: '跟进内容',
       dataIndex: 'content',
       key: 'content',
-      ellipsis: { showTitle: false },
+      width: 220,
       render: (v: string) => (
-        <Tooltip title={v} placement="topLeft">
-          <span>{v}</span>
-        </Tooltip>
+        <Paragraph
+          style={{ fontSize: 13, margin: 0, lineHeight: 1.5 }}
+          ellipsis={{ rows: 2, tooltip: v }}
+        >
+          {v}
+        </Paragraph>
       ),
     },
     {
       title: '涉及产品',
       dataIndex: 'relatedProductIds',
       key: 'products',
-      width: 150,
+      width: 110,
       render: (ids: string[]) => {
         if (!ids || !ids.length)
           return <span style={{ color: '#cbd5e1', fontSize: 12 }}>—</span>
@@ -299,7 +302,7 @@ export default function FollowUpList() {
                   style={{ color: '#2563eb', cursor: 'pointer', fontSize: 12 }}
                   onClick={() => navigate(`/funds/${id}`)}
                 >
-                  {f.name.length > 7 ? f.name.slice(0, 7) + '…' : f.name}
+                  {f.name.length > 6 ? f.name.slice(0, 6) + '...' : f.name}
                 </span>
               ) : null
             })}
@@ -314,7 +317,7 @@ export default function FollowUpList() {
       title: '跟进时间',
       dataIndex: 'timestamp',
       key: 'timestamp',
-      width: 95,
+      width: 88,
       render: (v: string) => <span style={{ color: '#475569' }}>{fmtDate(v)}</span>,
       sorter: (a, b) =>
         new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime(),
@@ -324,7 +327,7 @@ export default function FollowUpList() {
       title: '下次跟进',
       dataIndex: 'nextFollowUpDate',
       key: 'nextFollowUpDate',
-      width: 100,
+      width: 88,
       render: (v?: string) => {
         if (!v) return <span style={{ color: '#cbd5e1', fontSize: 12 }}>—</span>
         const overdue = isOverdue(v)
@@ -348,11 +351,12 @@ export default function FollowUpList() {
       title: '下一步行动',
       dataIndex: 'nextAction',
       key: 'nextAction',
-      width: 130,
-      ellipsis: true,
+      width: 110,
       render: (v?: string) =>
         v ? (
-          <span style={{ fontSize: 13 }}>{v}</span>
+          <Text style={{ fontSize: 13 }} ellipsis={{ tooltip: v }}>
+            {v}
+          </Text>
         ) : (
           <span style={{ color: '#cbd5e1', fontSize: 12 }}>—</span>
         ),
@@ -360,7 +364,7 @@ export default function FollowUpList() {
     {
       title: '操作',
       key: 'action',
-      width: 110,
+      width: 92,
       fixed: 'right',
       render: (_, row) => (
         <Space size={0}>
@@ -473,16 +477,18 @@ export default function FollowUpList() {
         <Table<FollowUp>
           className="fund-table"
           rowKey="id"
+          tableLayout="fixed"
           loading={loading}
           dataSource={filtered}
           columns={columns}
           pagination={{
-            pageSize: 20,
-            showSizeChanger: false,
+            pageSize: 10,
+            showSizeChanger: true,
+            pageSizeOptions: ['10', '20', '50', '100'],
             showTotal: (total) => `共 ${total} 条`,
           }}
           size="middle"
-          scroll={{ x: 'max-content' }}
+          scroll={{ x: 1000 }}
           locale={{ emptyText: hasFilters ? '没有符合条件的跟进记录' : '暂无跟进记录' }}
         />
       </Card>

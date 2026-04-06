@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react'
+﻿import { Suspense, useState } from 'react'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { Layout, Menu, Spin, Typography, theme } from 'antd'
 import {
@@ -7,8 +7,6 @@ import {
   TeamOutlined,
   FileTextOutlined,
   RobotOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
 } from '@ant-design/icons'
 import type { MenuProps } from 'antd'
 
@@ -83,7 +81,7 @@ export default function AppLayout() {
       <Sider
         collapsible
         collapsed={collapsed}
-        trigger={null}
+        onCollapse={setCollapsed}
         width={240}
         style={{
           background: token.colorBgContainer,
@@ -137,7 +135,7 @@ export default function AppLayout() {
             )}
           </div>
 
-          <div style={{ flex: 1, overflow: 'hidden' }}>
+          <div style={{ flex: 1, overflow: 'hidden', paddingBottom: 48 }}>
             <Menu
               className="sidebar-menu"
               mode="inline"
@@ -148,33 +146,6 @@ export default function AppLayout() {
             />
           </div>
 
-          <div
-            style={{
-              padding: '12px 16px',
-              borderTop: `1px solid ${token.colorBorderSecondary}`,
-              display: 'flex',
-              justifyContent: collapsed ? 'center' : 'flex-start',
-              flexShrink: 0,
-            }}
-          >
-            <span
-              onClick={() => setCollapsed(!collapsed)}
-              style={{
-                fontSize: 16,
-                cursor: 'pointer',
-                color: token.colorTextSecondary,
-                display: 'flex',
-                alignItems: 'center',
-                padding: '6px 8px',
-                borderRadius: 8,
-                transition: 'background 0.2s',
-              }}
-              role="button"
-              aria-label="切换侧边栏"
-            >
-              {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            </span>
-          </div>
         </div>
       </Sider>
 

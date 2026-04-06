@@ -394,7 +394,12 @@ export default function FundList() {
           loading={loading}
           dataSource={funds}
           columns={columns}
-          pagination={{ pageSize: 10, showSizeChanger: false, showTotal: (t) => `共 ${t} 条` }}
+          pagination={{
+            pageSize: 10,
+            showSizeChanger: true,
+            pageSizeOptions: ['10', '20', '50', '100'],
+            showTotal: (t) => `共 ${t} 条`,
+          }}
           scroll={{ x: 1200 }}
           size="middle"
           locale={{
